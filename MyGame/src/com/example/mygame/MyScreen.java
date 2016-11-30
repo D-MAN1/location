@@ -64,7 +64,7 @@ private GameGui gui;
 private float spriteX=1;
 private Joint joint1,joint2,joint3;
 private float timeRat=2;
-private float time1=2f;//частота появления крыс
+private float time1=2f;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 private float timeFly=4f;
 private boolean flag=true;
 private boolean flag1=true;
@@ -74,7 +74,7 @@ private boolean flagCreateFly=false;
  final static String LOG="myLogs";
  private Initialize initialize;
 private EventListener eventListener;
-private boolean spriteFlag=true;
+private boolean exitFlag=true;
 
 	public MyScreen(Initialize initialize) {
 		this.initialize=initialize;
@@ -100,7 +100,7 @@ private boolean spriteFlag=true;
    stage.addActor(ball1);
    stage.addActor(ball2);
  
-   createChess(10); 
+   createChess(1); 
  
 stage.setDebugAll(true);
     RevoluteJointDef jointDef1 = new RevoluteJointDef();
@@ -140,8 +140,8 @@ stage.setDebugAll(true);
             	}, 0,0.01f);
 		
     		
-    		 if(x<Gdx.graphics.getWidth()/40){player.body.setLinearVelocity(-20, 0);}
-    		 if(x>Gdx.graphics.getWidth()/40){player.body.setLinearVelocity(20, 0); } 
+    		 if(x<player.getX()){player.body.setLinearVelocity(-20, 0);}
+    		 if(x>player.getX()){player.body.setLinearVelocity(20, 0); } 
     		return true;
     	}
         @Override
@@ -218,31 +218,15 @@ if (Data.state== State.PLAY){
  if(flagCreateFly==true)  createFly();
   createRat(delta);
  
- /* if(Rat.remov==true ){
-	for(int i=0;i<30; i++){
-		stage.addActor(new Part(world,Rat.posX,Rat.posY));
-		Rat.remov=false;
-	}
-  }
-  */
+ 
 	if(Data.playerRemov==true){ 
 	stage.addActor(new Part(world,Player.posX,2));
 	Data.playerRemov=false;
 	Data.gameOver=true; 
 	//Log.d(LOG, "Data.gameOver="+Data.gameOver);
 	}
-//	Log.d(LOG, "Data.gameOver="+Data.gameOver);
-	if(Data.gameOver & spriteFlag){
-		
-		//Log.d(LOG, "exists(="+Gdx.files.external("screenshot.png").exists());
-		
-		
-	/*	FileHandle[] files = Gdx.files.external("").list();
-		for(FileHandle file: files) {
-			Log.d(LOG, "file="+file);
-		}
-		*/
-		
+
+	if(Data.gameOver & exitFlag){
 	createExit();
 	dispose();
 	
@@ -253,7 +237,7 @@ if (Data.state== State.PLAY){
 	private void createExit() {
 		ScreenshotFactory.saveScreenshot();
 		stage.addActor(new Exit(world,initialize));
-		spriteFlag=false;
+		exitFlag=false;
 	}
 
 
@@ -317,8 +301,8 @@ if (Data.state== State.PLAY){
 		    jointDef3.bodyB =anchorBody;
 		    jointDef3.localAnchorA.set(0, 1);
 		    jointDef3.localAnchorB.set(1,0);
-		    jointDef3.frequencyHz=0.15f;//сила притяжения к объекту
-		    jointDef3.dampingRatio=0f; //затухания коэффициент
+		    jointDef3.frequencyHz=0.15f;//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		    jointDef3.dampingRatio=0f; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		    joint3 = world.createJoint(jointDef3);
 		//    Log.d(LOG,"i="+i);
 		    
@@ -338,7 +322,7 @@ if (Data.state== State.PLAY){
 	@Override
 	public void dispose() {
 	//	Data.score=30;
-		//	Fly.flyRemove=false;
+		flagCreateFly =false;
 			stage.setDebugAll(false);
 			 
 			stage.removeListener(eventListener);

@@ -26,20 +26,20 @@ public class Exit extends Actor{
 	public  Exit(World world,Initialize initialize) {
 		this.world=world;
 		this.initialize=initialize;
-		setBounds(-20, 0, 30, 20);
+		setBounds(0, 0, 30, 20);
 	
 		
 		
 		Texture texture = new Texture(Gdx.files.external( "/screenshot.png"));
 		 sprite = new Sprite(texture);
-		sprite.setBounds(-20, 0, 30, 20);
+		//sprite.setBounds(-20, 0, 30, 20);
 	
 	}
 float x= -30;
 @Override
 public void act(float delta) {
-	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-	Gdx.gl.glClearColor(0, 0, 1, 1);
+	//setBounds(-20, 0, 3+Gdx.input.getAzimuth()*0.1f, 20);
+	sprite.setBounds(-10, 0, 30+Gdx.input.getAccelerometerX()*0.5f, 20+ Gdx.input.getAccelerometerY()* 0.5f);
 	setPosition(x, 0);
 	sprite.setPosition(getX(),getY());
 	x+=0.2f;
