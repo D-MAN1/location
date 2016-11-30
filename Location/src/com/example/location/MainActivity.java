@@ -23,6 +23,7 @@ import android.widget.TextView;
 
     public class MainActivity extends Activity {
  final String LOG_TAG="myLogs";
+ 
     	  TextView tvEnabledGPS;
     	  TextView tvStatusGPS;
     	  TextView tvLocationGPS;
