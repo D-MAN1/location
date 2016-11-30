@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar" sourcepath="libs/gdx-backend-android.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx-box2d.jar" sourcepath="C:/eclipse/soursces/gdx-box2d-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx.jar" sourcepath="C:/eclipse/soursces/gdx-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx-freetype.jar" sourcepath="C:/eclipse/soursces/gdx-freetype-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/box2dlights-1.5-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

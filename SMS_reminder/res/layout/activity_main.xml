@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent"> 
+
+<LinearLayout 
+android:id="@+id/linearLayout1" 
+android:layout_width="match_parent" 
+android:orientation="horizontal" 
+android:layout_height="wrap_content">
+
+    <ToggleButton
+        android:id="@+id/ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_weight="0.99"
+        android:textOff="OFF"
+        android:textOn="ON" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:onClick="onClickAdd"
+        android:text="ADD" />
+ 
+
+</LinearLayout> 
+
+<LinearLayout
+    android:id="@+id/linearLayoutEditText"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/etName"
+        android:text="введите текст сообщения"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fadeScrollbars="true" >
+
+        <requestFocus />
+    </EditText>
+ 
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/llMain"
+    android:layout_width="match_parent"
+    android:layout_height="319dp"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lvMain"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_weight="0.27" >
+    </ListView>
+</LinearLayout>
+ 
+</LinearLayout>

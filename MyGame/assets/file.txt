@@ -1,0 +1,32 @@
+file.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+android
+  rotate: false
+  xy: 0, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 64
+androidS
+  rotate: false
+  xy: 0, 64
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+internal_browser
+  rotate: false
+  xy: 0, 320
+  size: 14, 14
+  orig: 16, 16
+  offset: 1, 0
+  index: -1
+launch_stop
+  rotate: false
+  xy: 14, 320
+  size: 12, 12
+  orig: 16, 16
+  offset: 2, 2
+  index: -1
